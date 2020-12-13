@@ -69,8 +69,6 @@ function userChoices() {
     hasSpecialCharacters: hasSpecialCharacters,
     hasLowerCase: hasLowerCase,
     hasUpperCase: hasUpperCase
-    // create for upper and lower
-
   }
 
   console.log(userOptions)
@@ -120,7 +118,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the password input
 function writePassword() {
-  var password = generatePassword(); 
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
