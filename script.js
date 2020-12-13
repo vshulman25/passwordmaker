@@ -25,7 +25,8 @@ var specialCharacters = [
   '_',
   '.'
 ];                     //0   // 1     //2    //3
-var lowerCaseArray = ["a", "b", "c", "d"]
+var lowerCaseArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", 'o', "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var upperCaseArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 /// add lowercase and uppercase array
 
 
@@ -54,15 +55,20 @@ function userChoices() {
     alert("Must be less than 128")
     return;
   }
+
+
   //returns boolean value and stores it in variable
   var hasNumbers = confirm("Would you like to include numbers?");
   var hasSpecialCharacters = confirm("Would you like to include special characters?");
-  /// create for upper and lowercase 
+  var hasLowerCase = confirm("Would you like to use lower case letters?");
+  var hasUpperCase = confirm("Would you like to use upper case letters?")
 
   var userOptions = { //takes in prompts/confirms and makes them usable values
     passwordLength: passwordLength,
     hasNumbers: hasNumbers,
     hasSpecialCharacters: hasSpecialCharacters,
+    hasLowerCase: hasLowerCase,
+    hasUpperCase: hasUpperCase
     // create for upper and lower
 
   }
@@ -89,6 +95,14 @@ function generatePassword() {
     possibleOptions = possibleOptions.concat(specialCharacters);
     possibleOptions.push(randomize(specialCharacters));
   }
+  if (passwordChoices.hasLowerCase) {
+    possibleOptions = possibleOptions.concat(lowerCaseArray);
+    possibleOptions.push(randomize(lowerCaseArray));
+  }
+  if (passwordChoices.hasUpperCase) {
+    possibleOptions = possibleOptions.concat(upperCaseArray);
+    possibleOptions.push(randomize(upperCaseArray));
+  }
   for (var i = 0; i < passwordChoices.passwordLength; i++) {
     var openCharacters = randomize(possibleOptions);
     newPassword.push(openCharacters);
@@ -104,7 +118,7 @@ function generatePassword() {
 
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// Write password to the password input
 function writePassword() {
   var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
