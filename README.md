@@ -16,8 +16,8 @@ Use preferred code reader and browser to view HTML, JS CSS & README files.
 
 ## Preview 
 
-![Password Maker - Password and Console](.assets/passwordfinal.jpeg)
-![Password Maker - User Choices](.assets/questions.jpeg)
+![Password Maker - Password and Console](./assets/passwordfinal.jpeg)
+![Password Maker - User Choices](./assets/questions.jpeg)
 
 ---
 
